@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-container">
+
+	<div th:if="${msg != null}">
+		<div class="w3-panel w3-red w3-display-container">
+			<span onclick="this.parentElement.style.display='none'"
+				class="w3-button w3-large w3-display-topright">&times;</span>
+			<h3>Erro!</h3>
+			<p th:text="${msg}"></p>
+		</div>
+	</div>
+
+	<div class="divClass">
+
+		<fieldset>
+			<form method="POST" th:action="@{/login}">
+				<h1>Login</h1>
+				<input type="text" placeholder="Usuário" name="username" /> <br>
+				<br> <input type="password" placeholder="Senha" name="password" />
+				<br>
+				<br>
+				<input class="button" type="submit" value="Entrar"/>
+			</form>
+		</fieldset>
+
+	</div>
+
+
+
+</body>
+
+</html>
